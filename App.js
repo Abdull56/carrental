@@ -8,28 +8,20 @@ import DisplayPage from './screens/DisplayPage';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [showLandingPage, setShowLandingPage] = useState(true);
-
-  const handleGetStarted = () => {
-    setShowLandingPage(false);
-  };
 
   return (
     <NavigationContainer>
-        {showLandingPage ? (
-          <LandingPage onGetStarted={handleGetStarted} />
-        ) : (
-          <Stack.Navigator>
-            <Stack.Screen
-              name='Other'
-              component={DisplayPage}
-              options={{
-                headerShown: false, 
-                contentStyle: { backgroundColor: '#FFE5E5' }, 
-              }}
-            />
-          </Stack.Navigator>
-        )}
+      <Stack.Navigator>
+        <Stack.Screen name='Landing' component={LandingPage} options={{headerShown: false}}/>
+        <Stack.Screen
+          name='Display'
+          component={DisplayPage}
+          options={{
+            headerShown: false, 
+            contentStyle: { backgroundColor: '#FFE5E5' }, 
+          }}
+          />
+        </Stack.Navigator>
     </NavigationContainer>
   );
 }

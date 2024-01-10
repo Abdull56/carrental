@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet, ImageBackground } from "react-native";
 
-export default function LandingPage({ navigation, route, onGetStarted }) {
+export default function LandingPage({ navigation, route }) {
 
   const back = require('../assets/bg1.jpg');  
   return (
@@ -22,7 +22,7 @@ export default function LandingPage({ navigation, route, onGetStarted }) {
             <View style={styles.buttonContainer}>
                 <Pressable
                         style={styles.button}
-                        onPress={onGetStarted}
+                        onPress={() => navigation.navigate("Display")}
                 >
                     <Text style={{ color: "black", fontSize: 25, alignSelf:'center', paddingTop:10 }}>Get Started</Text>
                 </Pressable>
