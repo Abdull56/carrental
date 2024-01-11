@@ -19,17 +19,17 @@ const Create = () => {
         <Text style={styles.text2}>Create Account to access existing jobs</Text>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.inputText}>First Name </Text>
+          <Text style={styles.inputText}>Full Name </Text>
           <TextInput style={styles.input} placeholder="first name" />
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.inputText}>Last Name </Text>
+          <Text style={styles.inputText}>Email Name </Text>
           <TextInput style={styles.input} placeholder="last name" />
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.inputText}>Email </Text>
+          <Text style={styles.inputText}>Password </Text>
           <TextInput style={styles.input} placeholder="email" />
         </View>
 
@@ -38,7 +38,7 @@ const Create = () => {
             style={styles.button}
             title="Sign Up"
             color="white"
-            onPress={() => console.log("Sign Up")}
+            onPress={() => alert("Sign up")}
           />
         </View>
 
@@ -47,7 +47,7 @@ const Create = () => {
             style={styles.checkbox}
             value={isChecked}
             onValueChange={setChecked}
-            color={isChecked ? "#4630EB" : undefined}
+            color={isChecked ? "#845EC2" : undefined}
           />
           <Text>I agree to privacy policy</Text>
         </View>
@@ -91,14 +91,15 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    paddingTop: 5,
+    paddingTop: 20,
     borderColor: "purple",
     borderWidth: 1,
-    padding: 40,
+    padding: 20,
     width: 370,
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 5,
   },
 
   button: {
