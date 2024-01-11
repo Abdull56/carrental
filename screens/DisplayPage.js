@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import { View, SafeAreaView, Text, TextInput,StatusBar, Pressable,StyleSheet } from "react-native";
+import { View, SafeAreaView, Text, TextInput,StatusBar,TouchableOpacity, SectionList, Pressable, Image,ScrollView } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import DateTimePicker from "@react-native-community/datetimepicker";
+import carData from '../data.json';
+import { styles } from "../styles";
 
-export default function DisplayPage({ navigation, route }) {
+
+export default function DisplayPage({ navigation}) {
+  
   const [value, setSearchValue] = useState("");
   const [pickupdate, setPickupDate] = useState(new Date());
   const [returndate, setReturnDate] = useState(new Date());
-
+  const [isLiked, setLiked] = useState(false);
+  
   console.log(value)
 
   const onChangepickup = (e, selectedDate) => {
@@ -20,6 +25,16 @@ export default function DisplayPage({ navigation, route }) {
 
   console.log(pickupdate)
   console.log(returndate)
+
+  const filteredCarData = carData.map(section => ({
+    ...section,
+    data: section.data.filter(item => parseInt(item.id) <= 2)
+  }));
+
+  const handlePress = () => {
+ 
+    setLiked(!isLiked);
+  };
 
   return (
     <SafeAreaView style={styles.safecontainer}>
@@ -98,76 +113,54 @@ export default function DisplayPage({ navigation, route }) {
             style={styles.button}
             onPress={() => navigation.navigate("Landing")}
           >
-            <Text style={{ color: "black", fontSize: 35, alignSelf:'center', paddingTop:7 }}>Search</Text>
+            <Text style={{ color: "black", fontSize: 35, alignSelf:'center', paddingTop:3 }}>Search</Text>
           </Pressable>
         </View>
 
+        <View style={styles.carContainer}>
+          <View style={styles.cardIntro}>
+            <Text style={styles.text}>Most Popular Cars</Text>
+            <TouchableOpacity onPress={() => console.log('Pressed')}>
+              <Icon name="arrow-right" size={20} color="black"  style={{paddingTop: 6, paddingHorizontal:18}}/>
+            </TouchableOpacity>
+          </View>
+          <SectionList
+            sections={filteredCarData}
+            renderItem={({ item }) => (
+              <View style={styles.card}>
+                <View style={styles.imageCard}>
+                  <Image source={{ uri: item.imageUrl }} style={styles.image} resizeMode='contain' />
+
+                  <TouchableOpacity onPress={handlePress}>
+                    <Icon
+                      name={isLiked ? 'heart' : 'heart'}
+                      size={24}
+                      color={isLiked ? 'red' : '#EAECCC'} 
+                    />
+                  </TouchableOpacity>
+                </View>
+                <View style={styles.cardCars}>
+                  <Text style={styles.cardText}>{item.name}</Text>
+                  <Text style={styles.cardText}>
+                    <Icon name="star" size={16} color="#FF9800" />
+                    {item.stars}
+                  </Text>
+                </View>
+              </View>
+            )}
+
+            keyExtractor={(item) => item.id}
+            ItemSeparatorComponent={() => (
+              <View
+                style={{
+                  height: 10,
+                }}
+              />
+            )}
+          />
+        </View>    
     </SafeAreaView>
   );
   
 }
 
-const styles = StyleSheet.create({
-  safecontainer: {
-    flex: 1,
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: "bold",
-    paddingHorizontal:24,
-    marginBottom: 16,
-  },
-  searchinput:{
-    alignSelf:'center',
-    fontSize:18,
-    paddingHorizontal:10
-  },
-  border:{
-    backgroundColor: '#f5f5f5',
-    borderRadius: 17,
-    borderWidth: 1,
-    padding: 16,
-    margin: 14,
-    marginHorizontal:23,
-    flexBasis:60,
-    width:330,
-    flexDirection: 'row',
-  },
-  borderContainer:{
-    flexDirection:'row',
-    paddingHorizontal:24,
-  },
-  secborder:{
-    backgroundColor: '#f5f5f5',
-    borderRadius: 17,
-    borderWidth: 1,
-    padding: 16,
-    margin: 10,
-    height:70,
-    width: 140,
-    justifyContent:'center'
-  },
-  icondate:
-  {
-    flexDirection:'row',
-  },
-  datePicker:{
-    width:100,
-    marginTop:4
-  },
-  datePickerLabel:{
-    marginHorizontal:4,
-    color:'#AAD7D9'
-  },
-  button:{
-    backgroundColor: '#90EE90',
-    borderRadius: 26,
-    borderWidth: 1,
-    flexBasis:60,
-    width:310
-  },
-  buttonContainer:{
-    alignItems:'center',
-    margin:9
-  }
-});
