@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
 
   inputContainer: {
     marginTop: 10,
-    borderColor: "purple",
+    borderColor: "#845EC2",
   },
 
   inputText: {
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer: {
-    backgroundColor: "skyblue",
+    backgroundColor: "#845EC2",
     marginTop: 30,
     padding: 15,
     borderRadius: 10,
