@@ -6,11 +6,11 @@ import {
   ScrollView,
   Button,
 } from "react-native";
-// import CheckBox from "@react-native-community/checkbox";
+import Checkbox from "expo-checkbox";
 import { useState } from "react";
 
 const Create = () => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [isChecked, setChecked] = useState(false);
 
   return (
     <ScrollView>
@@ -43,15 +43,16 @@ const Create = () => {
         </View>
 
         <View style={styles.privacyContainer}>
+          <Checkbox
+            style={styles.checkbox}
+            value={isChecked}
+            onValueChange={setChecked}
+            color={isChecked ? "#4630EB" : undefined}
+          />
           <Text>I agree to privacy policy</Text>
         </View>
 
         <View style={styles.privacyContainer}>
-          {/* <CheckBox
-            disabled={false}
-            value={toggleCheckBox}
-            onValueChange={(newValue) => setToggleCheckBox(newValue)}
-          /> */}
           <Text>Already have an account ? Sign in </Text>
         </View>
       </View>
@@ -116,6 +117,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
+    flexDirection: "row",
+  },
+
+  checkbox: {
+    margin: 8,
   },
 });
 export default Create;
