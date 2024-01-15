@@ -9,28 +9,32 @@ import {
 import Checkbox from "expo-checkbox";
 import { useState } from "react";
 
-const Create = () => {
+export default function SignUp({ navigation }) {
   const [isChecked, setChecked] = useState(false);
 
   return (
     <ScrollView>
-      <View style={styles.header}>
+      <View style={styles.container}>
         <Text style={styles.text}>Create Account</Text>
         <Text style={styles.text2}>Create Account to access existing jobs</Text>
 
         <View style={styles.inputContainer}>
           <Text style={styles.inputText}>Full Name </Text>
-          <TextInput style={styles.input} placeholder="first name" />
+          <TextInput style={styles.input} placeholder="full name" />
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.inputText}>Email Name </Text>
-          <TextInput style={styles.input} placeholder="last name" />
+          <Text style={styles.inputText}>Email </Text>
+          <TextInput style={styles.input} placeholder="email" />
         </View>
 
         <View style={styles.inputContainer}>
           <Text style={styles.inputText}>Password </Text>
-          <TextInput style={styles.input} placeholder="email" />
+          <TextInput
+            style={styles.input}
+            placeholder="password"
+            secureTextEntry
+          />
         </View>
 
         <View style={styles.buttonContainer}>
@@ -38,7 +42,7 @@ const Create = () => {
             style={styles.button}
             title="Sign Up"
             color="white"
-            onPress={() => alert("Sign up")}
+            onPress={() => navigation.navigate("Login")}
           />
         </View>
 
@@ -58,24 +62,24 @@ const Create = () => {
       </View>
     </ScrollView>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  header: {
+  container: {
+    paddingLeft: 20,
     backgroundColor: "#fff",
-    paddingTop: 20,
-    marginTop: 60,
+    paddingTop: 40,
   },
 
   text: {
     color: "purple",
     fontWeight: "bold",
     fontSize: 35,
-    paddingBottom: 10,
+    paddingBottom: 15,
   },
 
   text2: {
-    marginBottom: 30,
+    paddingBottom: 30,
   },
 
   inputContainer: {
@@ -99,18 +103,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 5,
-  },
-
-  button: {
-    marginTop: 30,
   },
 
   buttonContainer: {
     backgroundColor: "#845EC2",
-    marginTop: 30,
-    padding: 15,
-    borderRadius: 10,
+    marginTop: 35,
+    marginRight: 25,
+    padding: 10,
+    borderRadius: 30,
+    marginBottom: 10,
   },
 
   privacyContainer: {
@@ -125,4 +126,3 @@ const styles = StyleSheet.create({
     margin: 8,
   },
 });
-export default Create;
