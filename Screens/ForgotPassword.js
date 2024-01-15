@@ -1,94 +1,33 @@
 import React from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  ScrollView,
-  TextInput,
-  Button,
-} from "react-native";
+import { Text, View, ScrollView, TextInput, Button } from "react-native";
+import { globalStyles } from "../Styles/Styles";
 
 export default function ForgotPassword() {
-  <ScrollView>
-    <View style={styles.container}>
-      <View>
-        <Text style={styles.text}>Forgot Password</Text>
+  return (
+    <ScrollView>
+      <View style={globalStyles.container}>
+        <View>
+          <Text style={globalStyles.text}>ForgotPassword</Text>
 
-        <View style={styles.inputContainer}>
-          <Text style={styles.inputText}>New Password</Text>
-          <TextInput style={styles.input} placeholder="New Password" />
-        </View>
+          <View style={globalStyles.inputContainer}>
+            <Text style={globalStyles.inputText}>Email</Text>
+            <TextInput style={globalStyles.input} placeholder="full name" />
+          </View>
 
-        <View style={styles.inputContainer}>
-          <Text style={styles.inputText}>Cornfirm Password </Text>
-          <TextInput style={styles.input} placeholder="Cornfirm Password" />
-        </View>
+          <View style={globalStyles.inputContainer}>
+            <Text style={globalStyles.inputText}>Password </Text>
+            <TextInput
+              style={globalStyles.input}
+              placeholder="password"
+              secureTextEntry
+            />
+          </View>
 
-        <View style={styles.buttonContainer}>
-          <Button
-            style={styles.button}
-            title="Verify"
-            color="white"
-            onPress={() => alert("No Details")}
-          />
+          <View style={globalStyles.buttonContainer}>
+            <Button style={globalStyles.button} title="Verify" color="white" />
+          </View>
         </View>
       </View>
-    </View>
-  </ScrollView>;
+    </ScrollView>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  header: {
-    backgroundColor: "#fff",
-    paddingTop: 20,
-    marginTop: 60,
-  },
-
-  text: {
-    color: "purple",
-    fontWeight: "bold",
-    fontSize: 35,
-    paddingBottom: 10,
-  },
-
-  inputContainer: {
-    marginTop: 10,
-    borderColor: "#845EC2",
-  },
-
-  inputText: {
-    paddingTop: 10,
-    marginBottom: 10,
-    fontWeight: "bold",
-    fontSize: 15,
-  },
-
-  input: {
-    paddingTop: 20,
-    borderColor: "purple",
-    borderWidth: 1,
-    padding: 20,
-    width: 370,
-    borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 5,
-  },
-
-  button: {
-    marginTop: 30,
-  },
-
-  buttonContainer: {
-    backgroundColor: "#845EC2",
-    marginTop: 30,
-    padding: 15,
-    borderRadius: 10,
-  },
-});

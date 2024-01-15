@@ -58,4 +58,16 @@ export const globalStyles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
   },
+
+  privacyContainer: {
+    marginTop: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+    flexDirection: "row",
+  },
+
+  checkbox: {
+    margin: 8,
+  },
 });
