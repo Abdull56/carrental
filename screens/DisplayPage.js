@@ -36,6 +36,11 @@ export default function DisplayPage({ navigation}) {
     setLiked(!isLiked);
   };
 
+  const handleSecondPress = (item) => {
+    navigation.navigate('Car Details', { carData: item });
+  };
+
+
   return (
     <SafeAreaView style={styles.safecontainer}>
         <StatusBar barStyle={'dark-content'}/>
@@ -120,33 +125,35 @@ export default function DisplayPage({ navigation}) {
         <View style={styles.carContainer}>
           <View style={styles.cardIntro}>
             <Text style={styles.text}>Most Popular Cars</Text>
-            <TouchableOpacity onPress={() => console.log('Pressed')}>
+            <TouchableOpacity onPress={() => navigation.navigate('AvailableCars', { isLiked: true })}>
               <Icon name="arrow-right" size={20} color="black"  style={{paddingTop: 6, paddingHorizontal:18}}/>
             </TouchableOpacity>
           </View>
           <SectionList
             sections={filteredCarData}
             renderItem={({ item }) => (
-              <View style={styles.card}>
-                <View style={styles.imageCard}>
-                  <Image source={{ uri: item.imageUrl }} style={styles.image} resizeMode='contain' />
+              <TouchableOpacity onPress={() => handleSecondPress(item)}>
+                <View style={styles.card}>
+                  <View style={styles.imageCard}>
+                    <Image source={{ uri: item.imageUrl }} style={styles.image} resizeMode='contain' />
 
-                  <TouchableOpacity onPress={handlePress}>
-                    <Icon
-                      name={isLiked ? 'heart' : 'heart'}
-                      size={24}
-                      color={isLiked ? 'red' : '#EAECCC'} 
-                    />
-                  </TouchableOpacity>
+                    <TouchableOpacity onPress={handlePress}>
+                      <Icon
+                        name={isLiked ? 'heart' : 'heart'}
+                        size={24}
+                        color={isLiked ? 'red' : '#EAECCC'} 
+                      />
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.cardCars}>
+                    <Text style={styles.cardText}>{item.name}</Text>
+                    <Text style={styles.cardText}>
+                      <Icon name="star" size={16} color="#FF9800" />
+                      {item.stars}
+                    </Text>
+                  </View>
                 </View>
-                <View style={styles.cardCars}>
-                  <Text style={styles.cardText}>{item.name}</Text>
-                  <Text style={styles.cardText}>
-                    <Icon name="star" size={16} color="#FF9800" />
-                    {item.stars}
-                  </Text>
-                </View>
-              </View>
+              </TouchableOpacity>
             )}
 
             keyExtractor={(item) => item.id}

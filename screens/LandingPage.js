@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Pressable, StyleSheet, ImageBackground } from "react-native";
+import { View, Text, Pressable, StyleSheet,StatusBar, ImageBackground } from "react-native";
 
 export default function LandingPage({ navigation, route }) {
 
@@ -9,6 +9,8 @@ export default function LandingPage({ navigation, route }) {
         source={back} 
         style={styles.backgroundImage}
     >
+        <StatusBar barStyle={'light-content'}/>
+
         <View style={styles.container}>
             <View>
                 <Text style={styles.text}>Rentals</Text>
@@ -22,7 +24,7 @@ export default function LandingPage({ navigation, route }) {
             <View style={styles.buttonContainer}>
                 <Pressable
                         style={styles.button}
-                        onPress={() => navigation.navigate("Display")}
+                        onPress={() => navigation.navigate("TabBar")}
                 >
                     <Text style={{ color: "black", fontSize: 25, alignSelf:'center', paddingTop:10 }}>Get Started</Text>
                 </Pressable>

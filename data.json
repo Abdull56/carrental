@@ -2,9 +2,18 @@
     {
       "type": "Engine",
       "data": [
-        { "id": "1", "name": "Mercedes Mayback", "stars": 4.8, "imageUrl": "https://www.mercedes-benz.pl/content/poland/pl/passengercars/models/saloon/mercedes-maybach-s-class/overview/_jcr_content/root/responsivegrid/media_slider/media_slider_item/image.component.damq1.3344544592957.jpg/mercedes-maybach-s-class-z223-teaser-exterior-3302x1858-10-2022.jpg" },
-        { "id": "2", "name": "BMW", "stars": 4.1 ,"imageUrl": "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_1080,q_auto:eco,w_1920/v1/cms/uploads/l0cwn2uquu5n6kl3eow1" },
-        { "id": "3", "name": "BMW", "stars": 4.1 ,"imageUrl": "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_1080,q_auto:eco,w_1920/v1/cms/uploads/l0cwn2uquu5n6kl3eow1" }
+        { "id": "1", "name": "Mercedes Mayback", "stars": 4.8, "seats": 2, "fueltype": "Petrol","transmission":"Automatic","fuelusage":"10 l/100 km","price":"$150/day", "imageUrl": "https://i.pinimg.com/originals/87/4d/99/874d99aaeb7847911f4775c102587244.png" },
+        { "id": "2", "name": "BMW", "stars": 4.1, "seats": 4, "fueltype": "Electric","transmission":"Automatic","fuelusage":"20 l/100 km" ,"price":"$100/day", "imageUrl": "https://pngimg.com/d/bmw_PNG99543.png" },
+        { "id": "3", "name": "Ford", "stars": 4.5, "seats": 4, "fueltype": "Petrol","transmission":"Manual","fuelusage":"26 l/100 km" ,"price":"$160/day" ,"imageUrl": "https://www.gpas-cache.ford.com/guid/2fb9db3b-7a69-3900-af47-7131030fe2b7.png" },
+        { "id": "4", "name": "Audi", "stars": 3.1 , "seats": 4, "fueltype": "Petrol","transmission":"Automatic","fuelusage":"50 l/100 km" ,"price":"$450/day","imageUrl": "https://pngimg.com/d/audi_PNG99485.png" },
+        { "id": "5", "name": "Toyota", "stars": 2.1 , "seats": 4, "fueltype": "Petrol","transmission":"Manual","fuelusage":"30 l/100 km" ,"price":"$110/day","imageUrl": "https://freepngimg.com/thumb/toyota/36839-7-toyota-image.png" },
+        { "id": "6", "name": "Mercedes", "stars": 4.3, "seats": 4, "fueltype": "Petrol","transmission":"Automatic","fuelusage":"10 l/100 km" ,"price":"$140/day" ,"imageUrl": "https://pngimg.com/d/mercedes_PNG80188.png" },
+        { "id": "7", "name": "Bugatti", "stars": 5, "seats": 2, "fueltype": "Electric","transmission":"Automatic","fuelusage":"45 l/100 km" ,"price":"$140/day" ,"imageUrl": "https://pngimg.com/d/bugatti_PNG17.png" },
+        { "id": "8", "name": "Aston Martin", "stars": 4.3, "seats": 4, "fueltype": "Petrol","transmission":"Automatic","fuelusage":"55 l/100 km" ,"price":"$840/day" ,"imageUrl": "https://i.pinimg.com/originals/83/7a/e3/837ae3f17fa7b8a04fd44ffbc660410f.png" },
+        { "id": "9", "name": "Mercedes", "stars": 4.1, "seats": 4, "fueltype": "Petrol","transmission":"Manual","fuelusage":"45 l/100 km" ,"price":"$140/day" ,"imageUrl": "https://purepng.com/public/uploads/large/purepng.com-mercedesmercedes-benzmercedesmercedes-luxury-vehiclesbusescoachestrucks-1701527525459qvxil.png" },
+        { "id": "10", "name": "Aston Martin", "stars": 3.8, "seats": 4, "fueltype": "Petrol","transmission":"Manual","fuelusage":"25 l/100 km" ,"price":"$400/day" ,"imageUrl": "https://pngimg.com/d/aston_martin_PNG9.png" },
+        { "id": "11", "name": "lamborghini", "stars": 4.9, "seats": 4, "fueltype": "Petrol","transmission":"Automatic","fuelusage":"35 l/100 km" ,"price":"$340/day" ,"imageUrl": "https://pngimg.com/d/lamborghini_PNG102917.png" },
+        { "id": "12", "name": "Bugatti", "stars": 4.8, "seats": 4, "fueltype": "Petrol","transmission":"Manual","fuelusage":"65 l/100 km" ,"price":"$240/day" ,"imageUrl": "https://pngimg.com/d/bugatti_PNG30.png" }
       ]
     }
 ]
