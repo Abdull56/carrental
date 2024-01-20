@@ -42,7 +42,7 @@ export const globalStyles = StyleSheet.create({
     borderWidth: 1,
     padding: 20,
     width: 370,
-    borderRadius: 10,
+    borderRadius: 30,
     justifyContent: "center",
     alignItems: "center",
     marginTop: 5,
@@ -56,7 +56,7 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: "#845EC2",
     marginTop: 30,
     padding: 15,
-    borderRadius: 10,
+    borderRadius: 40,
   },
 
   privacyContainer: {
