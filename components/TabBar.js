@@ -5,7 +5,7 @@ import LandingPage from '../screens/LandingPage';
 import DisplayPage from '../screens/DisplayPage';
 import DescriptionPage from '../screens/DescriptionPage';
 import StackBar from './StackBar';
-import { styles } from '../styles';
+import { globalStyles } from './styles/globalStyles';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Settings from '../screens/Settings';
 
@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator();
 
 function TabBar() {
   return (
-    <Tab.Navigator barStyle={styles.tabcontainer} screenOptions={{headerShown: false}}>
+    <Tab.Navigator barStyle={globalStyles.tabcontainer} screenOptions={{headerShown: false}}>
         <Tab.Screen
           name="Home"
           component={StackBar}

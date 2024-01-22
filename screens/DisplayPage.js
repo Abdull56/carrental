@@ -3,7 +3,7 @@ import { View, SafeAreaView, Text, TextInput,StatusBar,TouchableOpacity, Section
 import Icon from 'react-native-vector-icons/FontAwesome';
 import DateTimePicker from "@react-native-community/datetimepicker";
 import carData from '../data.json';
-import { styles } from "../styles";
+import { globalStyles } from "../components/styles/globalStyles";
 
 
 export default function DisplayPage({ navigation}) {
@@ -42,25 +42,25 @@ export default function DisplayPage({ navigation}) {
 
 
   return (
-    <SafeAreaView style={styles.safecontainer}>
+    <SafeAreaView style={globalStyles.safecontainer}>
         <StatusBar barStyle={'dark-content'}/>
 
-        <View style={styles.header}>
-            <Text style={styles.text}>Rentals</Text>
+        <View style={globalStyles.header}>
+            <Text style={globalStyles.text}>Rentals</Text>
         </View>
-        <View style={styles.border}>
+        <View style={globalStyles.border}>
             <Icon name="search" size={22} style={{paddingHorizontal:7}} color="black"/>
-            <TextInput style={styles.searchinput} placeholder='Pick-up and Return locations' value={value} onChangeText={setSearchValue}/>
+            <TextInput style={globalStyles.searchinput} placeholder='Pick-up and Return locations' value={value} onChangeText={setSearchValue}/>
         </View>
         
-        <View style={styles.borderContainer}>
-            <View style={styles.secborder}>
-              <View style={styles.icondate}>
+        <View style={globalStyles.borderContainer}>
+            <View style={globalStyles.secborder}>
+              <View style={globalStyles.icondate}>
                 <Icon name="calendar" size={14} color="#AAD7D9"/>
-                <Text style={styles.datePickerLabel}>Pick-up Date:</Text>
+                <Text style={globalStyles.datePickerLabel}>Pick-up Date:</Text>
               </View>
               <DateTimePicker
-                style={styles.datePicker}
+                style={globalStyles.datePicker}
                 value={pickupdate}
                 mode={"date"}
                 is24Hour={true}
@@ -68,13 +68,13 @@ export default function DisplayPage({ navigation}) {
               />
             </View>
 
-            <View style={styles.secborder}>
-              <View style={styles.icondate}>
+            <View style={globalStyles.secborder}>
+              <View style={globalStyles.icondate}>
                 <Icon name="clock-o" size={16} color="#AAD7D9"/>
-                <Text style={styles.datePickerLabel}>Time:</Text>
+                <Text style={globalStyles.datePickerLabel}>Time:</Text>
               </View>
               <DateTimePicker
-                style={styles.datePicker}
+                style={globalStyles.datePicker}
                 value={pickupdate}
                 mode={"time"}
                 is24Hour={true}
@@ -83,14 +83,14 @@ export default function DisplayPage({ navigation}) {
             </View>
         </View>
 
-        <View style={styles.borderContainer}>
-            <View style={styles.secborder}>
-              <View style={styles.icondate}>
+        <View style={globalStyles.borderContainer}>
+            <View style={globalStyles.secborder}>
+              <View style={globalStyles.icondate}>
                 <Icon name="calendar" size={14} color="#AAD7D9"/>
-                <Text style={styles.datePickerLabel}>Return Date:</Text>
+                <Text style={globalStyles.datePickerLabel}>Return Date:</Text>
               </View>
               <DateTimePicker
-                style={styles.datePicker}
+                style={globalStyles.datePicker}
                 value={returndate}
                 mode={"date"}
                 is24Hour={true}
@@ -98,13 +98,13 @@ export default function DisplayPage({ navigation}) {
               />
             </View>
 
-            <View style={styles.secborder}>
-              <View style={styles.icondate}>
+            <View style={globalStyles.secborder}>
+              <View style={globalStyles.icondate}>
                 <Icon name="clock-o" size={16} color="#AAD7D9"/>
-                <Text style={styles.datePickerLabel}>Time:</Text>
+                <Text style={globalStyles.datePickerLabel}>Time:</Text>
               </View>
               <DateTimePicker
-                style={styles.datePicker}
+                style={globalStyles.datePicker}
                 value={returndate}
                 mode={"time"}
                 is24Hour={true}
@@ -113,18 +113,18 @@ export default function DisplayPage({ navigation}) {
             </View>
         </View>
 
-        <View style={styles.buttonContainer}>
+        <View style={globalStyles.buttonContainer}>
           <Pressable
-            style={styles.button}
+            style={globalStyles.button}
             onPress={() => navigation.navigate("Landing")}
           >
             <Text style={{ color: "black", fontSize: 35, alignSelf:'center', paddingTop:3 }}>Search</Text>
           </Pressable>
         </View>
 
-        <View style={styles.carContainer}>
-          <View style={styles.cardIntro}>
-            <Text style={styles.text}>Most Popular Cars</Text>
+        <View style={globalStyles.carContainer}>
+          <View style={globalStyles.cardIntro}>
+            <Text style={globalStyles.text}>Most Popular Cars</Text>
             <TouchableOpacity onPress={() => navigation.navigate('AvailableCars', { isLiked: true })}>
               <Icon name="arrow-right" size={20} color="black"  style={{paddingTop: 6, paddingHorizontal:18}}/>
             </TouchableOpacity>
@@ -133,9 +133,9 @@ export default function DisplayPage({ navigation}) {
             sections={filteredCarData}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => handleSecondPress(item)}>
-                <View style={styles.card}>
-                  <View style={styles.imageCard}>
-                    <Image source={{ uri: item.imageUrl }} style={styles.image} resizeMode='contain' />
+                <View style={globalStyles.card}>
+                  <View style={globalStyles.imageCard}>
+                    <Image source={{ uri: item.imageUrl }} style={globalStyles.image} resizeMode='contain' />
 
                     <TouchableOpacity onPress={handlePress}>
                       <Icon
@@ -145,9 +145,9 @@ export default function DisplayPage({ navigation}) {
                       />
                     </TouchableOpacity>
                   </View>
-                  <View style={styles.cardCars}>
-                    <Text style={styles.cardText}>{item.name}</Text>
-                    <Text style={styles.cardText}>
+                  <View style={globalStyles.cardCars}>
+                    <Text style={globalStyles.cardText}>{item.name}</Text>
+                    <Text style={globalStyles.cardText}>
                       <Icon name="star" size={16} color="#FF9800" />
                       {item.stars}
                     </Text>

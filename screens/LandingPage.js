@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet,StatusBar, ImageBackground } from "react-native";
 
-export default function LandingPage({ navigation, route }) {
+export default function LandingPage({ navigation}) {
 
   const back = require('../assets/bg1.jpg');  
   return (
