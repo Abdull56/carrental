@@ -1,25 +1,13 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SignUp from "./Screens/SignUp";
-import Login from "./Screens/Login";
-import ForgotPassword from "./Screens/ForgotPassword";
+import Home from "./Home/Home";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Sign Up"
-        screenOptions={{
-          headerStyle: { backgroundColor: "#845EC2" },
-          headerTintColor: "#fff",
-        }}
-      >
-        <Stack.Screen name="Sign Up" component={SignUp} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-      </Stack.Navigator>
+      <Home />
     </NavigationContainer>
   );
 }
