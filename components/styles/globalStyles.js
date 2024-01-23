@@ -29,7 +29,7 @@ export const globalStyles = StyleSheet.create({
     },
     borderContainer:{
       flexDirection:'row',
-      paddingHorizontal:24,
+      paddingHorizontal:14,
     },
     secborder:{
       backgroundColor: 'white',
@@ -38,7 +38,7 @@ export const globalStyles = StyleSheet.create({
       padding: 16,
       margin: 10,
       height:70,
-      width: 140,
+      width: 153,
       justifyContent:'center'
     },
     icondate:
@@ -56,10 +56,10 @@ export const globalStyles = StyleSheet.create({
     },
     button:{
       backgroundColor: '#90EE90',
-      borderRadius: 26,
+      borderRadius: 20,
       borderWidth: 1,
       flexBasis:60,
-      width:337
+      width:328
     },
     buttonContainer:{
       alignItems:'center',
@@ -78,7 +78,16 @@ export const globalStyles = StyleSheet.create({
       alignSelf:'center',
       borderRadius:8,
       borderWidth:1,
-      width:350
+      width:180,
+      height:180
+    },
+    carddisplay:{
+      backgroundColor: 'white',
+      padding:16,
+      alignSelf:'center',
+      borderRadius:8,
+      borderWidth:1,
+      width:330
     },
     cardText:{
       fontSize:15,
@@ -93,11 +102,21 @@ export const globalStyles = StyleSheet.create({
     },
     image:{
       width:'100%',
+      height: 110,
+      marginBottom:16,
+      marginLeft: -10 
+    },
+    imagedisplay:{
+      width:'98%',
       height: 170,
       marginBottom:16,
       marginLeft: -10 
     },
     tabcontainer:{
         backgroundColor:'white'
-    }
+    },
+    flatListColumnWrapper: {
+      justifyContent: 'space-between',
+    },
+    
   });

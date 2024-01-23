@@ -50,7 +50,7 @@ export default function DisplayPage({ navigation}) {
         </View>
         <View style={globalStyles.border}>
             <Icon name="search" size={22} style={{paddingHorizontal:7}} color="black"/>
-            <TextInput style={globalStyles.searchinput} placeholder='Pick-up and Return locations' value={value} onChangeText={setSearchValue}/>
+            <TextInput style={[globalStyles.searchinput, { fontSize: 16}]} placeholder='Search for Cars' value={value} onChangeText={setSearchValue}/>
         </View>
         
         <View style={globalStyles.borderContainer}>
@@ -118,7 +118,7 @@ export default function DisplayPage({ navigation}) {
             style={globalStyles.button}
             onPress={() => navigation.navigate("Landing")}
           >
-            <Text style={{ color: "black", fontSize: 35, alignSelf:'center', paddingTop:3 }}>Search</Text>
+            <Text style={{ color: "black", fontSize: 35, alignSelf:'center', paddingTop:4.5 }}>Search</Text>
           </Pressable>
         </View>
 
@@ -133,9 +133,9 @@ export default function DisplayPage({ navigation}) {
             sections={filteredCarData}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => handleSecondPress(item)}>
-                <View style={globalStyles.card}>
+                <View style={globalStyles.carddisplay}>
                   <View style={globalStyles.imageCard}>
-                    <Image source={{ uri: item.imageUrl }} style={globalStyles.image} resizeMode='contain' />
+                    <Image source={{ uri: item.imageUrl }} style={globalStyles.imagedisplay} resizeMode='contain' />
 
                     <TouchableOpacity onPress={handlePress}>
                       <Icon
