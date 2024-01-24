@@ -1,35 +1,51 @@
 import React from "react";
-import { View, Text, Pressable, StyleSheet,StatusBar, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  Pressable,
+  StyleSheet,
+  StatusBar,
+  ImageBackground,
+} from "react-native";
 
-export default function LandingPage({ navigation}) {
-
-  const back = require('../assets/bg1.jpg');  
+export default function LandingPage({ navigation }) {
+  const back = require("../assets/bg1.jpg");
   return (
-    <ImageBackground
-        source={back} 
-        style={styles.backgroundImage}
-    >
-        <StatusBar barStyle={'light-content'}/>
+    <ImageBackground source={back} style={styles.backgroundImage}>
+      <StatusBar barStyle={"light-content"} />
 
-        <View style={styles.container}>
-            <View>
-                <Text style={styles.text}>Rentals</Text>
-            </View>
-            
-            <View>
-                <Text style={styles.text}>Find the ideal car rental for your trip</Text> 
-                <Text style={styles.secondtext}>Get access to the best deals from global car brands</Text> 
-            </View>
-
-            <View style={styles.buttonContainer}>
-                <Pressable
-                        style={styles.button}
-                        onPress={() => navigation.navigate("TabBar")}
-                >
-                    <Text style={{ color: "black", fontSize: 25, alignSelf:'center', paddingTop:10 }}>Get Started</Text>
-                </Pressable>
-            </View>
+      <View style={styles.container}>
+        <View>
+          <Text style={styles.text}>Rentals</Text>
         </View>
+
+        <View>
+          <Text style={styles.text}>
+            Find the ideal car rental for your trip
+          </Text>
+          <Text style={styles.secondtext}>
+            Get access to the best deals from global car brands
+          </Text>
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <Pressable
+            style={styles.button}
+            onPress={() => navigation.navigate("Sign Up")}
+          >
+            <Text
+              style={{
+                color: "black",
+                fontSize: 25,
+                alignSelf: "center",
+                paddingTop: 10,
+              }}
+            >
+              Get Started
+            </Text>
+          </Pressable>
+        </View>
+      </View>
     </ImageBackground>
   );
 }
@@ -37,33 +53,33 @@ export default function LandingPage({ navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
   },
-  backgroundImage:{
+  backgroundImage: {
     flex: 1,
-    resizeMode: 'cover',
+    resizeMode: "cover",
     paddingTop: 54,
-    paddingHorizontal: 14
+    paddingHorizontal: 14,
   },
   text: {
     fontSize: 40,
     fontWeight: "bold",
-    fontStyle:'italic',
-    color: '#f5f5f5',
+    fontStyle: "italic",
+    color: "#f5f5f5",
   },
-  secondtext:{
+  secondtext: {
     fontSize: 19,
-    color: '#fff',
-    paddingTop: 25
+    color: "#fff",
+    paddingTop: 25,
   },
-  button:{
-    backgroundColor: '#90EE90',
+  button: {
+    backgroundColor: "#90EE90",
     borderRadius: 26,
     borderWidth: 1,
-    flexBasis:50
+    flexBasis: 50,
   },
-  buttonContainer:{
-    paddingBottom: 28, 
-    justifyContent: 'flex-end',
-  }
+  buttonContainer: {
+    paddingBottom: 28,
+    justifyContent: "flex-end",
+  },
 });
