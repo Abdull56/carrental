@@ -26,7 +26,16 @@ function TabBar() {
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: "#32de84",
-        tabBarInactiveTintColor: "gray",
+        tabBarInactiveTintColor: "#D4CDDE",
+        tabBarStyle: {
+          // borderRadius: 40,
+          position: "absolute",
+          height: 90,
+          // right: 8,
+          // left: 8,
+          backgroundColor: "#2B292D",
+          bottom: 1,
+        },
       })}
     >
       <Tab.Screen
@@ -34,7 +43,7 @@ function TabBar() {
         component={StackBar}
         options={{
           tabBarIcon: () => (
-            <Ionicons name="home-outline" size={20} color="#006A4E" />
+            <Ionicons name="home-outline" size={20} color="#4FFFB0" />
           ),
         }}
       />
@@ -43,7 +52,7 @@ function TabBar() {
         component={Settings}
         options={{
           tabBarIcon: () => (
-            <Ionicons name="person" size={20} color="#006A4E" />
+            <Ionicons name="person" size={20} color="#4FFFB0" />
           ),
           // tabBarBadge: 3,
         }}
@@ -53,7 +62,7 @@ function TabBar() {
         component={Settings}
         options={{
           tabBarIcon: () => (
-            <Ionicons name="settings-outline" size={20} color="#006A4E" />
+            <Ionicons name="settings-outline" size={20} color="#4FFFB0" />
           ),
         }}
       />
@@ -62,7 +71,7 @@ function TabBar() {
         component={DisplayPage}
         options={{
           tabBarIcon: () => (
-            <Ionicons name="chatbubble-outline" size={20} color="#006A4E" />
+            <Ionicons name="chatbubble-outline" size={20} color="#4FFFB0" />
           ),
         }}
       />
