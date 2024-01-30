@@ -1,10 +1,9 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import "react-native-gesture-handler";
-import DisplayPage from "../Screens/DisplayPage";
-import LandingPage from "../Screens/LandingPage";
-import DescriptionPage from "../Screens/DescriptionPage";
-import AvailableCar from "../Screens/AvailableCar";
+import DisplayPage from "../../Screens/DisplayPage";
+import DescriptionPage from "../../Screens/DescriptionPage";
+import AvailableCar from "../../Screens/AvailableCar";
 
 const Stack = createNativeStackNavigator();
 

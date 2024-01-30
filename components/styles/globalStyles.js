@@ -100,3 +100,74 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: "red",
   },
 });
+
+export const registerStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    height: "100%",
+    padding: 15,
+  },
+
+  header: {
+    backgroundColor: "#fff",
+    paddingTop: 20,
+    marginTop: 60,
+  },
+
+  text: {
+    color: "purple",
+    fontWeight: "bold",
+    fontSize: 35,
+    paddingBottom: 10,
+  },
+
+  text2: {
+    marginBottom: 30,
+  },
+
+  inputContainer: {
+    borderColor: "#845EC2",
+  },
+
+  inputText: {
+    paddingTop: 10,
+    marginBottom: 10,
+    fontWeight: "bold",
+    fontSize: 15,
+  },
+
+  input: {
+    borderColor: "purple",
+    borderWidth: 1,
+    padding: 20,
+    // width: 370,
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 5,
+  },
+
+  button: {
+    marginTop: 20,
+  },
+
+  buttonContainer: {
+    backgroundColor: "#845EC2",
+    marginTop: 30,
+    padding: 15,
+    borderRadius: 40,
+  },
+
+  privacyContainer: {
+    marginTop: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+    flexDirection: "row",
+  },
+
+  checkbox: {
+    margin: 10,
+  },
+});

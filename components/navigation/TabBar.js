@@ -1,10 +1,10 @@
 import React from "react";
 import "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
-import DisplayPage from "../Screens/DisplayPage";
+import DisplayPage from "../../Screens/DisplayPage";
 import StackBar from "./StackBar";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Settings from "../Screens/Settings";
+import Settings from "../../Screens/Settings";
 
 const Tab = createBottomTabNavigator();
 
