@@ -52,7 +52,7 @@ export default function DisplayPage({ navigation }) {
 
   return (
     <SafeAreaView>
-      <View style={{ backgroundColor: "white" }}>
+      <View>
         <StatusBar barStyle={"dark-content"} />
 
         <View style={globalStyles.header}>

@@ -127,7 +127,7 @@ export const globalStyles = StyleSheet.create({
     margin: 9,
   },
   carContainer: {
-    margin: 20,
+    margin: 9,
   },
   cardIntro: {
     flexDirection: "row",
@@ -135,7 +135,15 @@ export const globalStyles = StyleSheet.create({
   },
   card: {
     backgroundColor: "white",
-    padding: 16,
+    padding: 19,
+    alignSelf: "center",
+    borderRadius: 8,
+    borderWidth: 1,
+    width: 335,
+  },
+  secondcard: {
+    backgroundColor: "#9DBC98",
+    padding: 19,
     alignSelf: "center",
     borderRadius: 8,
     borderWidth: 1,
@@ -153,7 +161,13 @@ export const globalStyles = StyleSheet.create({
     justifyContent: "space-between",
   },
   image: {
-    width: "100%",
+    width: "96%",
+    height: 120,
+    marginBottom: 16,
+    marginLeft: -10,
+  },
+  secondimage: {
+    width: "96%",
     height: 170,
     marginBottom: 16,
     marginLeft: -10,
@@ -167,7 +181,7 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 30,
     padding: 10,
     borderRadius: 40,
-    width: 340,
+    width: 324,
     marginLeft: 20,
   },
 });

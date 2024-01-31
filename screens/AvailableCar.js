@@ -6,6 +6,7 @@ import {
   Image,
   Text,
   TouchableOpacity,
+  StatusBar,
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { globalStyles } from "../components/styles/globalStyles";
@@ -27,31 +28,25 @@ function AvailableCar({ navigation }) {
 
   return (
     <SafeAreaView>
-      <View style={globalStyles.safecontainer}>
+      <View>
+      <StatusBar barStyle={"light-content"} />
         <TouchableOpacity
           onPress={() => navigation.navigate("Display")}
-          style={{
-            width: 50,
-            justifyContent: "center",
-            alignItems: "center",
-            marginLeft: 8,
-            paddingTop: 20,
-            display: "flex",
-            marginBottom: 10,
-          }}
         >
-          <Icon name="arrow-left" size={15} color="white" />
+          <Icon name="arrow-left" size={23} color="white"  
+            style={{ paddingTop: 6, paddingHorizontal: 18 }}
+          />
         </TouchableOpacity>
         <View style={globalStyles.carContainer}>
           <SectionList
             sections={carData}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => handleSecondPress(item)}>
-                <View style={globalStyles.card}>
+                <View style={globalStyles.secondcard}>
                   <View style={globalStyles.imageCard}>
                     <Image
                       source={{ uri: item.imageUrl }}
-                      style={globalStyles.image}
+                      style={globalStyles.secondimage}
                       resizeMode="contain"
                     />
 

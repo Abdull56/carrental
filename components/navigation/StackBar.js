@@ -15,7 +15,7 @@ function StackBar() {
         component={DisplayPage}
         options={{
           headerShown: false,
-          contentStyle: { backgroundColor: "#FFE5E5" },
+          contentStyle: { backgroundColor: "white" },
         }}
       />
       <Stack.Screen
@@ -32,7 +32,8 @@ function StackBar() {
       <Stack.Screen
         name="AvailableCars"
         component={AvailableCar}
-        options={{ headerShown: false }}
+        options={{ headerShown: false,
+        contentStyle: { backgroundColor: "#2B292D" } }}
       />
     </Stack.Navigator>
   );
