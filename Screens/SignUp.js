@@ -78,7 +78,7 @@ export default function SignUp({ navigation }) {
                 style={registerStyles.checkbox}
                 value={isChecked}
                 onValueChange={setChecked}
-                color={isChecked ? "#845EC2" : undefined}
+                color={isChecked ? "#2B292D" : undefined}
               />
               <Text>I agree to privacy policy</Text>
             </View>

@@ -2,8 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const globalStyles = StyleSheet.create({
   safecontainer: {
-    flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#2B292D",
   },
   text: {
     fontSize: 24,
@@ -27,21 +26,29 @@ export const globalStyles = StyleSheet.create({
     width: 330,
     flexDirection: "row",
   },
-  borderContainer: {
-    flexDirection: "row",
-    paddingHorizontal: 24,
+  accessoriesContainer: {
+    padding: 22,
   },
-  secborder: {
+  dateContainer: {
+    flexDirection: "row",
+    // padding: 20,
+    // paddingHorizontal: 8,
+  },
+  dateBorder: {
     backgroundColor: "white",
     borderRadius: 17,
     borderWidth: 1,
-    padding: 16,
-    margin: 10,
-    height: 70,
-    width: 140,
+    paddingBottom: 20,
+    paddingLeft: 20,
+    paddingRight: 15,
+    paddingTop: 15,
+    marginRight: 15,
+    height: 80,
+    width: 160,
     justifyContent: "center",
+    alignItems: "center",
   },
-  icondate: {
+  dateIcon: {
     flexDirection: "row",
   },
   datePicker: {
@@ -51,7 +58,62 @@ export const globalStyles = StyleSheet.create({
   },
   datePickerLabel: {
     marginHorizontal: 4,
-    color: "#AAD7D9",
+    color: "#2B292D",
+  },
+  dateTimeContainer: { flexDirection: "row" },
+  dateTimeBorder: {
+    backgroundColor: "white",
+    borderRadius: 17,
+    borderWidth: 1,
+    paddingBottom: 20,
+    paddingRight: 15,
+    paddingTop: 15,
+    marginRight: 15,
+    height: 80,
+    width: 160,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  dateTimeIcon: { flexDirection: "row" },
+  calenderTimeContainer: { flexDirection: "row" },
+  calenderTimeBorder: {
+    backgroundColor: "white",
+    borderRadius: 17,
+    borderWidth: 1,
+    paddingBottom: 20,
+    paddingRight: 15,
+    paddingTop: 15,
+    marginRight: 15,
+    height: 80,
+    marginTop: 15,
+    width: 160,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  calenderTimeIcon: { flexDirection: "row" },
+  calenderContainer: {
+    flexDirection: "row",
+    // padding: 20,
+    // paddingHorizontal: 8,
+  },
+  calenderBorder: {
+    backgroundColor: "white",
+    borderRadius: 17,
+    borderWidth: 1,
+    paddingBottom: 20,
+    paddingLeft: 20,
+    paddingRight: 15,
+    paddingTop: 15,
+    marginRight: 15,
+    height: 80,
+    width: 160,
+    marginTop: 15,
+    justifyContent: "center",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  calenderIcon: {
+    flexDirection: "row",
   },
   button: {
     backgroundColor: "#90EE90",
@@ -65,7 +127,7 @@ export const globalStyles = StyleSheet.create({
     margin: 9,
   },
   carContainer: {
-    margin: 6,
+    margin: 20,
   },
   cardIntro: {
     flexDirection: "row",
@@ -99,13 +161,21 @@ export const globalStyles = StyleSheet.create({
   tabcontainer: {
     backgroundColor: "red",
   },
+  landingButton: {
+    backgroundColor: "#A2A8A5",
+    marginTop: 200,
+    marginBottom: 30,
+    padding: 10,
+    borderRadius: 40,
+    width: 340,
+    marginLeft: 20,
+  },
 });
 
 export const registerStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    height: "100%",
+    backgroundColor: "#A2A8A5",
     padding: 15,
   },
 
@@ -116,7 +186,7 @@ export const registerStyles = StyleSheet.create({
   },
 
   text: {
-    color: "purple",
+    color: "#2B292D",
     fontWeight: "bold",
     fontSize: 35,
     paddingBottom: 10,
@@ -127,7 +197,7 @@ export const registerStyles = StyleSheet.create({
   },
 
   inputContainer: {
-    borderColor: "#845EC2",
+    borderColor: "white",
   },
 
   inputText: {
@@ -138,7 +208,7 @@ export const registerStyles = StyleSheet.create({
   },
 
   input: {
-    borderColor: "purple",
+    borderColor: "white",
     borderWidth: 1,
     padding: 20,
     // width: 370,
@@ -153,7 +223,7 @@ export const registerStyles = StyleSheet.create({
   },
 
   buttonContainer: {
-    backgroundColor: "#845EC2",
+    backgroundColor: "#2B292D",
     marginTop: 30,
     padding: 15,
     borderRadius: 40,
@@ -169,5 +239,13 @@ export const registerStyles = StyleSheet.create({
 
   checkbox: {
     margin: 10,
+  },
+  searchButtonContainer: {
+    backgroundColor: "#2B292D",
+    marginTop: 10,
+    padding: 10,
+    borderRadius: 40,
+    width: 340,
+    marginLeft: 20,
   },
 });
