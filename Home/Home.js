@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LandingPage from "../Screens/LandingPage";
-import TabBar from "../components/TabBar";
+import TabBar from "../components/navigation/TabBar";
 import SignUp from "../Screens/SignUp";
 import Login from "../Screens/Login";
 import ForgotPassword from "../Screens/ForgotPassword"
