@@ -4,7 +4,7 @@ import LandingPage from "../Screens/LandingPage";
 import TabBar from "../components/TabBar";
 import SignUp from "../Screens/SignUp";
 import Login from "../Screens/Login";
-import ForgotPassword from "../Screens/ForgotPassword";
+import ForgotPassword from "../Screens/ForgotPassword"
 
 const Stack = createNativeStackNavigator();
 
