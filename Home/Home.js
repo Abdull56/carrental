@@ -1,10 +1,10 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LandingPage from "../screens/LandingPage";
+import LandingPage from "../Screens/LandingPage";
 import TabBar from "../components/TabBar";
-import SignUp from "../screens/SignUp";
-import Login from "../screens/Login";
-import ForgotPassword from "../screens/ForgotPassword";
+import SignUp from "../Screens/SignUp";
+import Login from "../Screens/Login";
+import ForgotPassword from "../Screens/ForgotPassword";
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +13,7 @@ export default function Home() {
     <Stack.Navigator
       initialRouteName="Landing"
       screenOptions={{
-        headerStyle: { backgroundColor: "#845EC2" },
+        headerStyle: { backgroundColor: "#2B292D" },
         headerTintColor: "#fff",
       }}
     >

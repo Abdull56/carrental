@@ -5,17 +5,19 @@ import {
   Pressable,
   StyleSheet,
   StatusBar,
+  Button,
   ImageBackground,
 } from "react-native";
+import { globalStyles } from "../components/styles/globalStyles";
 
 export default function LandingPage({ navigation }) {
-  const back = require("../assets/bg1.jpg");
+  const back = require("../assets/jake-pierre.jpg");
   return (
     <ImageBackground source={back} style={styles.backgroundImage}>
       <StatusBar barStyle={"light-content"} />
 
       <View style={styles.container}>
-        <View>
+        <View style={styles.rentals}>
           <Text style={styles.text}>Rentals</Text>
         </View>
 
@@ -28,22 +30,12 @@ export default function LandingPage({ navigation }) {
           </Text>
         </View>
 
-        <View style={styles.buttonContainer}>
-          <Pressable
-            style={styles.button}
+        <View style={globalStyles.landingButton}>
+          <Button
+            title="Sign Up"
+            color="black"
             onPress={() => navigation.navigate("Sign Up")}
-          >
-            <Text
-              style={{
-                color: "black",
-                fontSize: 25,
-                alignSelf: "center",
-                paddingTop: 10,
-              }}
-            >
-              Get Started
-            </Text>
-          </Pressable>
+          />
         </View>
       </View>
     </ImageBackground>
@@ -53,7 +45,7 @@ export default function LandingPage({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
   },
   backgroundImage: {
     flex: 1,
@@ -71,15 +63,17 @@ const styles = StyleSheet.create({
     fontSize: 19,
     color: "#fff",
     paddingTop: 25,
+    marginBottom: 130,
   },
   button: {
     backgroundColor: "#90EE90",
     borderRadius: 26,
     borderWidth: 1,
     flexBasis: 50,
+    marginTop: 50,
   },
-  buttonContainer: {
-    paddingBottom: 28,
-    justifyContent: "flex-end",
+  rentals: {
+    marginBottom: 50,
+    marginTop: 20,
   },
 });
