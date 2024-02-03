@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   View,
   SafeAreaView,
@@ -14,7 +14,7 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import carData from "../data.json";
+import fetchData from "../Servicefiles/authservice";
 import { globalStyles } from "../components/styles/globalStyles";
 import { registerStyles } from "../components/styles/globalStyles";
 
@@ -23,6 +23,34 @@ export default function DisplayPage({ navigation }) {
   const [pickupdate, setPickupDate] = useState(new Date());
   const [returndate, setReturnDate] = useState(new Date());
   const [isLiked, setLiked] = useState(false);
+  const [carData, setCarData] = useState([]); 
+
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchDataFromApi = async () => {
+      try {
+        const data = await fetchData(); // Use the imported function
+
+        // Ensure the received data has the correct structure
+        setCarData(data);
+      } catch (err) {
+        setError(`Error fetching data: ${err.message}`);
+      }
+    };
+
+    fetchDataFromApi();
+  }, []);
+
+
+  if (error) {
+    return <Text>Error fetching data: {error}</Text>;
+  }
+
+  if (!carData.length) {
+    return <Text>Loading...</Text>;
+  }
+
 
   console.log(value);
 
@@ -37,10 +65,10 @@ export default function DisplayPage({ navigation }) {
   console.log(pickupdate);
   console.log(returndate);
 
-  const filteredCarData = carData.map((section) => ({
-    ...section,
-    data: section.data.filter((item) => parseInt(item.id) <= 2),
-  }));
+  const filteredCarData = carData.map((item) => ({
+    ...item,
+  })).slice(0, 1);
+  
 
   const handlePress = () => {
     setLiked(!isLiked);
@@ -49,6 +77,9 @@ export default function DisplayPage({ navigation }) {
   const handleSecondPress = (item) => {
     navigation.navigate("Car Details", { carData: item });
   };
+
+ 
+
 
   return (
     <SafeAreaView>
@@ -187,7 +218,7 @@ export default function DisplayPage({ navigation }) {
             </TouchableOpacity>
           </View>
           <SectionList
-            sections={filteredCarData}
+            sections={[{ data: filteredCarData }]}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => handleSecondPress(item)}>
                 <View style={globalStyles.card}>

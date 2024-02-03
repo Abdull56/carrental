@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   SafeAreaView,
   View,
@@ -9,14 +9,16 @@ import {
   StatusBar,
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import fetchData from "../Servicefiles/authservice";
 import { globalStyles } from "../components/styles/globalStyles";
-import carData from "../data.json";
 import { useRoute } from "@react-navigation/native";
+
 
 function AvailableCar({ navigation }) {
   const route = useRoute();
   const { isLiked = false } = route.params || {};
   const [localIsLiked, setLocalIsLiked] = useState(isLiked);
+  const [carData, setCarData] = useState([]);
 
   const handleLikePress = () => {
     setLocalIsLiked(!localIsLiked);
@@ -26,6 +28,20 @@ function AvailableCar({ navigation }) {
     navigation.navigate("Car Details", { carData: item });
   };
 
+  useEffect(() => {
+    const fetchDataFromApi = async () => {
+      try {
+        const data = await fetchData();
+        setCarData(data);
+      } catch (err) {
+        console.error(`Error fetching data: ${err.message}`);
+      }
+    };
+
+    fetchDataFromApi();
+  }, []);
+
+ 
   return (
     <SafeAreaView>
       <View>
@@ -39,7 +55,7 @@ function AvailableCar({ navigation }) {
         </TouchableOpacity>
         <View style={globalStyles.carContainer}>
           <SectionList
-            sections={carData}
+            sections={[{ data: carData }]}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => handleSecondPress(item)}>
                 <View style={globalStyles.secondcard}>
