@@ -5,6 +5,7 @@ import DisplayPage from "../../Screens/DisplayPage";
 import StackBar from "./StackBar";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Settings from "../../Screens/Settings";
+import Profile from "../../Screens/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -49,16 +50,6 @@ function TabBar() {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Settings}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons name="person" size={20} color="#4FFFB0" />
-          ),
-          // tabBarBadge: 3,
-        }}
-      />
-      <Tab.Screen
         name="Settings"
         component={Settings}
         options={{
@@ -73,6 +64,15 @@ function TabBar() {
         options={{
           tabBarIcon: () => (
             <Ionicons name="chatbubble-outline" size={20} color="#4FFFB0" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="person" size={20} color="#4FFFB0" />
           ),
         }}
       />

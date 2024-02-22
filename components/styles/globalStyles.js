@@ -4,6 +4,10 @@ export const globalStyles = StyleSheet.create({
   safecontainer: {
     backgroundColor: "#2B292D",
   },
+  safecontainer2:{
+    flex: 1,
+    backgroundColor:"#E3E1D9" 
+  },
   text: {
     fontSize: 24,
     fontWeight: "bold",
@@ -184,6 +188,37 @@ export const globalStyles = StyleSheet.create({
     width: 324,
     marginLeft: 20,
   },
+  firstbackground:{
+    flex: 1,
+    marginTop: 36,
+    backgroundColor: "#9AD0C2"
+  },
+  profileborder: {
+    width: 155,
+    height: 155,
+    borderRadius: 100, 
+    backgroundColor: "#A2A8A5",
+    alignItems: 'center',
+    marginLeft: 110,
+    top:20 
+  } ,
+  profileborder2: {
+    width: 143,
+    height: 143,
+    borderRadius: 100, 
+    backgroundColor: "#CCD3CA",
+    alignItems: 'center',
+    marginLeft: 1,
+    top:5.5 
+  },
+  hrLine: {
+    borderBottomColor: 'grey',
+    borderBottomWidth: 1,
+    marginVertical: 8,
+  },
+  textborder:{
+    marginTop: 80,
+  }
 });
 
 export const registerStyles = StyleSheet.create({
@@ -261,5 +296,5 @@ export const registerStyles = StyleSheet.create({
     borderRadius: 40,
     width: 340,
     marginLeft: 20,
-  },
+  }
 });
