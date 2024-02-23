@@ -4,10 +4,6 @@ export const globalStyles = StyleSheet.create({
   safecontainer: {
     backgroundColor: "#2B292D",
   },
-  safecontainer2:{
-    flex: 1,
-    backgroundColor:"#E3E1D9" 
-  },
   text: {
     fontSize: 24,
     fontWeight: "bold",
@@ -188,37 +184,6 @@ export const globalStyles = StyleSheet.create({
     width: 324,
     marginLeft: 20,
   },
-  firstbackground:{
-    flex: 1,
-    marginTop: 36,
-    backgroundColor: "#9AD0C2"
-  },
-  profileborder: {
-    width: 155,
-    height: 155,
-    borderRadius: 100, 
-    backgroundColor: "#A2A8A5",
-    alignItems: 'center',
-    marginLeft: 110,
-    top:20 
-  } ,
-  profileborder2: {
-    width: 143,
-    height: 143,
-    borderRadius: 100, 
-    backgroundColor: "#CCD3CA",
-    alignItems: 'center',
-    marginLeft: 1,
-    top:5.5 
-  },
-  hrLine: {
-    borderBottomColor: 'grey',
-    borderBottomWidth: 1,
-    marginVertical: 8,
-  },
-  textborder:{
-    marginTop: 80,
-  }
 });
 
 export const registerStyles = StyleSheet.create({
@@ -296,5 +261,58 @@ export const registerStyles = StyleSheet.create({
     borderRadius: 40,
     width: 340,
     marginLeft: 20,
-  }
+  },
+
+  settingContainer: {
+    flex: 1,
+    paddingVertical: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  profileName: {
+    marginTop: 15,
+    fontSize: 20,
+    fontWeight: "600",
+  },
+  profileLocation: {
+    marginTop: 5,
+  },
+  profileAvatar: {
+    height: 80,
+    width: 80,
+    borderRadius: 9999,
+    marginTop: 10,
+  },
+  profileAction: {
+    backgroundColor: "gray",
+    width: 26,
+    height: 26,
+    justifyContent: "center",
+    borderRadius: 9999,
+    position: "absolute",
+    right: -7,
+    bottom: -12,
+    alignItems: "center",
+  },
+  section: {
+    paddingHorizontal: 20,
+  },
+  sectionHeader: {
+    paddingVertical: 8,
+    fontSize: 18,
+    fontWeight: "600",
+    // transform: "uppercase",
+    letterSpacing: 1.3,
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    height: 50,
+    backgroundColor: "#D4D1D8",
+    paddingHorizontal: 8,
+    marginBottom: 8,
+    borderRadius: 10,
+  },
+  rowLabel: {},
 });
