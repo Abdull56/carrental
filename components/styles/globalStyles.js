@@ -184,41 +184,41 @@ export const globalStyles = StyleSheet.create({
     width: 324,
     marginLeft: 20,
   },
-  safecontainer2:{
+  safecontainer2: {
     flex: 1,
-    backgroundColor:"#E3E1D9" 
+    backgroundColor: "#E3E1D9",
   },
-  firstbackground:{
+  firstbackground: {
     flex: 1,
     marginTop: 36,
-    backgroundColor: "#9AD0C2"
+    backgroundColor: "#9AD0C2",
   },
   profileborder: {
     width: 155,
     height: 155,
-    borderRadius: 100, 
+    borderRadius: 100,
     backgroundColor: "#A2A8A5",
-    alignItems: 'center',
+    alignItems: "center",
     marginLeft: 110,
-    top:20 
-  } ,
+    top: 20,
+  },
   profileborder2: {
     width: 143,
     height: 143,
-    borderRadius: 100, 
+    borderRadius: 100,
     backgroundColor: "#CCD3CA",
-    alignItems: 'center',
+    alignItems: "center",
     marginLeft: 1,
-    top:5.5 
+    top: 5.5,
   },
   hrLine: {
-    borderBottomColor: 'grey',
+    borderBottomColor: "grey",
     borderBottomWidth: 1,
     marginVertical: 8,
   },
-  textborder:{
+  textborder: {
     marginTop: 80,
-  }
+  },
 });
 
 export const registerStyles = StyleSheet.create({
@@ -303,6 +303,7 @@ export const registerStyles = StyleSheet.create({
     paddingVertical: 10,
     alignItems: "center",
     justifyContent: "center",
+    marginTop: 40,
   },
   profileName: {
     marginTop: 15,
@@ -338,6 +339,7 @@ export const registerStyles = StyleSheet.create({
     fontWeight: "600",
     // transform: "uppercase",
     letterSpacing: 1.3,
+    marginTop: 10,
   },
   row: {
     flexDirection: "row",
@@ -347,6 +349,7 @@ export const registerStyles = StyleSheet.create({
     backgroundColor: "#D4D1D8",
     paddingHorizontal: 8,
     marginBottom: 8,
+    marginTop: 10,
     borderRadius: 10,
   },
   rowLabel: {},
