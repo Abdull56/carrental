@@ -122,6 +122,14 @@ export const globalStyles = StyleSheet.create({
     flexBasis: 60,
     width: 337,
   },
+  button2: {
+    backgroundColor: "#BED1CF",
+    borderRadius: 15,
+    borderWidth: 1,
+    flexBasis: 36,
+    width: 120,
+    marginTop:12
+  },
   buttonContainer: {
     alignItems: "center",
     margin: 9,
@@ -218,6 +226,11 @@ export const globalStyles = StyleSheet.create({
   },
   textborder:{
     marginTop: 80,
+  },
+  modalContainer:{
+    flex:1,
+    backgroundColor: "#FFF6E9",
+    padding:60
   }
 });
 
