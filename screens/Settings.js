@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   StyleSheet,
   SafeAreaView,
@@ -10,24 +10,33 @@ import {
   Image,
 } from "react-native";
 import FeatherIcon from "react-native-vector-icons/Feather";
+import { EventRegister } from "react-native-event-listeners";
+import themeContext from "../components/darkMode/themeContext";
 
 export default function Settings() {
+  const theme = useContext(themeContext);
+  const [mode, setMode] = useState(false);
   const [form, setForm] = useState({
-    darkMode: false,
     emailNotifications: true,
     pushNotifications: false,
   });
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+    <SafeAreaView style={[{ flex: 1, backgroundColor: theme.background }]}>
       <View style={styles.container}>
-        <View style={styles.profile}>
+        <View style={[styles.profile, { backgroundColor: theme.background }]}>
           <TouchableOpacity
             onPress={() => {
               // handle onPress
             }}
+            // style={{ backgroundColor: theme.background }}
           >
-            <View style={styles.profileAvatarWrapper}>
+            <View
+              style={[
+                styles.profileAvatarWrapper,
+                // { backgroundColor: theme.background },
+              ]}
+            >
               <Image
                 alt=""
                 source={{
@@ -49,7 +58,9 @@ export default function Settings() {
           </TouchableOpacity>
 
           <View>
-            <Text style={styles.profileName}>Atiku Kantama</Text>
+            <Text style={[styles.profileName, { color: theme.color }]}>
+              Atiku Kantama
+            </Text>
 
             <Text style={styles.profileAddress}>
               21 sapele crescent ladoke Akintola Boulevard
@@ -65,31 +76,38 @@ export default function Settings() {
               onPress={() => {
                 // handle onPress
               }}
-              style={styles.row}
+              style={[styles.row, { backgroundColor: theme.background }]}
             >
               <View style={[styles.rowIcon, { backgroundColor: "#fe9400" }]}>
                 <FeatherIcon color="#fff" name="globe" size={20} />
               </View>
 
-              <Text style={styles.rowLabel}>Language</Text>
+              <Text style={[styles.rowLabel, { color: theme.color }]}>
+                Language
+              </Text>
 
               <View style={styles.rowSpacer} />
 
               <FeatherIcon color="#C6C6C6" name="chevron-right" size={20} />
             </TouchableOpacity>
 
-            <View style={styles.row}>
+            <View style={[styles.row, { backgroundColor: theme.background }]}>
               <View style={[styles.rowIcon, { backgroundColor: "#007afe" }]}>
                 <FeatherIcon color="#fff" name="moon" size={20} />
               </View>
 
-              <Text style={styles.rowLabel}>Dark Mode</Text>
+              <Text style={[styles.rowLabel, { color: theme.color }]}>
+                Dark Mode
+              </Text>
 
               <View style={styles.rowSpacer} />
 
               <Switch
-                onValueChange={(darkMode) => setForm({ ...form, darkMode })}
-                value={form.darkMode}
+                onValueChange={(value) => {
+                  setMode(value);
+                  EventRegister.emit("changeTheme", value);
+                }}
+                value={mode}
               />
             </View>
 
@@ -97,25 +115,29 @@ export default function Settings() {
               onPress={() => {
                 // handle onPress
               }}
-              style={styles.row}
+              style={[styles.row, { backgroundColor: theme.background }]}
             >
               <View style={[styles.rowIcon, { backgroundColor: "#32c759" }]}>
                 <FeatherIcon color="#fff" name="navigation" size={20} />
               </View>
 
-              <Text style={styles.rowLabel}>Location</Text>
+              <Text style={[styles.rowLabel, { color: theme.color }]}>
+                Location
+              </Text>
 
               <View style={styles.rowSpacer} />
 
               <FeatherIcon color="#C6C6C6" name="chevron-right" size={20} />
             </TouchableOpacity>
 
-            <View style={styles.row}>
+            <View style={[styles.row, { backgroundColor: theme.background }]}>
               <View style={[styles.rowIcon, { backgroundColor: "#38C959" }]}>
                 <FeatherIcon color="#fff" name="at-sign" size={20} />
               </View>
 
-              <Text style={styles.rowLabel}>Email Notifications</Text>
+              <Text style={[styles.rowLabel, { color: theme.color }]}>
+                Email Notifications
+              </Text>
 
               <View style={styles.rowSpacer} />
 
@@ -135,13 +157,15 @@ export default function Settings() {
               onPress={() => {
                 // handle onPress
               }}
-              style={styles.row}
+              style={[styles.row, { backgroundColor: theme.background }]}
             >
               <View style={[styles.rowIcon, { backgroundColor: "#8e8d91" }]}>
                 <FeatherIcon color="#fff" name="flag" size={20} />
               </View>
 
-              <Text style={styles.rowLabel}>Report Bug</Text>
+              <Text style={[styles.rowLabel, { color: theme.color }]}>
+                Report Bug
+              </Text>
 
               <View style={styles.rowSpacer} />
 
@@ -169,13 +193,15 @@ export default function Settings() {
               onPress={() => {
                 // handle onPress
               }}
-              style={styles.row}
+              style={[styles.row, { backgroundColor: theme.background }]}
             >
               <View style={[styles.rowIcon, { backgroundColor: "#32c759" }]}>
                 <FeatherIcon color="#fff" name="star" size={20} />
               </View>
 
-              <Text style={styles.rowLabel}>Rate in App Store</Text>
+              <Text style={[styles.rowLabel, { color: theme.color }]}>
+                Rate in App Store
+              </Text>
 
               <View style={styles.rowSpacer} />
 
