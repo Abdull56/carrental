@@ -1,29 +1,63 @@
-import React, { useState } from 'react'
-import { SafeAreaView, Text, TouchableOpacity, View, Modal, Pressable } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { SafeAreaView, Text, TouchableOpacity, View, Modal, Pressable, Image } from 'react-native'
 import { globalStyles } from "../components/styles/globalStyles";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { MaterialIcons } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
+import { useRoute } from '@react-navigation/native';
 
-const Profile = () => {
+
+const Profile = ({navigation}) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+
 
   const toggleModal = () => {
     setIsModalVisible(!isModalVisible);
   };
+
+  const [image, setImage] = useState(null);
+
+  const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.canceled) {
+      setImage(result.assets[0].uri);
+    }
+  };
+
+
   return (
     <SafeAreaView style={globalStyles.safecontainer2}>
         
-        <View style={globalStyles.profileborder}>
-            <View style={globalStyles.profileborder2}>
-                <Icon name="plus-circle" size={54} color="white"  
-                style={{ paddingTop: 26, paddingHorizontal: 18 }}
-                />
-                <Text style={{paddingTop : 6}}>Add Profile Picture</Text>
+        <TouchableOpacity onPress={pickImage}>
+            <View style={globalStyles.profileborder}>
+                <View style={globalStyles.profileborder2}>
+                    {image ? (
+                        <Image
+                        source={{ uri: image }}
+                        style={{ width: 155, height: 155, borderRadius: 100 }}
+                        />
+                    ) : (
+                        <View style={globalStyles.placeholderContainer}>
+                            <Text style={globalStyles.placeholderText}>Add Profile Picture</Text>
+                            <Icon name="camera" size={17} color="black" style={{ paddingTop: 5 }} />
+                        </View>
+                    )}
+                </View>
             </View>
-        </View>  
+        </TouchableOpacity>
+
         <View style={globalStyles.firstbackground}>
             <View style={globalStyles.textborder}>
-               <TouchableOpacity>
+               <TouchableOpacity onPress={() => navigation.navigate("Landing")}>
                <    View style={globalStyles.cardIntro}>
                         <Text style={globalStyles.text}>Log Out</Text>
                         <MaterialIcons name="logout" size={34} color="black"  
@@ -54,15 +88,6 @@ const Profile = () => {
                     <View style={globalStyles.cardIntro}>
                         <Text style={globalStyles.text}>About us</Text>
                         <Icon name="info-circle" size={34} color="black"  
-                        style={{ flexDirection:'row', paddingHorizontal: 18 }}
-                        />
-                    </View>
-                </TouchableOpacity>
-                <View style={globalStyles.hrLine} />
-                <TouchableOpacity>
-                    <View style={globalStyles.cardIntro}>
-                        <Text style={globalStyles.text}>Rate App</Text>
-                        <MaterialIcons name="star-rate" size={34} color="black"  
                         style={{ flexDirection:'row', paddingHorizontal: 18 }}
                         />
                     </View>

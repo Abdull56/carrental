@@ -202,8 +202,8 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: "#9AD0C2",
   },
   profileborder: {
-    width: 155,
-    height: 155,
+    width: 166,
+    height: 166,
     borderRadius: 100,
     backgroundColor: "#A2A8A5",
     alignItems: "center",
@@ -211,13 +211,13 @@ export const globalStyles = StyleSheet.create({
     top: 20,
   },
   profileborder2: {
-    width: 143,
-    height: 143,
+    width: 155,
+    height: 155,
     borderRadius: 100,
     backgroundColor: "#CCD3CA",
     alignItems: "center",
     marginLeft: 1,
-    top: 5.5,
+    top: 6,
   },
   hrLine: {
     borderBottomColor: "grey",
@@ -231,7 +231,17 @@ export const globalStyles = StyleSheet.create({
     flex:1,
     backgroundColor: "#FFF6E9",
     padding:60
-  }
+  },
+  placeholderContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 60
+  },
+  placeholderText: {
+    fontSize: 16,
+    color: '#555', // Adjust the color to match your design
+  },
+  
 });
 
 export const registerStyles = StyleSheet.create({
