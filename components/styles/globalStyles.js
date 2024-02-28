@@ -384,7 +384,7 @@ export const supportStyles = StyleSheet.create({
   },
   inputContainer: {
     position: 'absolute',
-    bottom: 110,
+    bottom: 90,
     left: 0,
     right: 0,
     flexDirection: 'row',
@@ -402,7 +402,9 @@ export const supportStyles = StyleSheet.create({
     borderColor: 'black',
     borderRadius: 10,
     paddingHorizontal: 16,
-    backgroundColor:'#CAA6A6'
+    backgroundColor:'#CAA6A6',
+    width:260,
+    bottom:8
   },
   sendButton: {
     marginLeft: 10,
@@ -410,6 +412,7 @@ export const supportStyles = StyleSheet.create({
     borderRadius: 20,
     paddingVertical: 8,
     paddingHorizontal: 16,
+    bottom:8
   },
   sendButtonText: {
     color: '#fff',

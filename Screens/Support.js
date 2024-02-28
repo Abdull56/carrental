@@ -64,6 +64,7 @@ const CustomerSupport = () => {
       <KeyboardAvoidingView 
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={supportStyles.inputContainer}
+        keyboardVerticalOffset={20}
       >
         <View style={supportStyles.textcont}>
           <TextInput
