@@ -377,3 +377,64 @@ export const registerStyles = StyleSheet.create({
   },
   rowLabel: {},
 });
+
+export const supportStyles = StyleSheet.create({
+  safecontainer2: {
+    flex: 1,
+  },
+  inputContainer: {
+    position: 'absolute',
+    bottom: 110,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: 16,
+    borderTopWidth: 1, 
+    borderTopColor: 'black',
+  },
+  inputField: {
+    flex: 1,
+    height: 40,
+    borderWidth: 1,
+    borderColor: 'black',
+    borderRadius: 10,
+    paddingHorizontal: 16,
+    backgroundColor:'#CAA6A6'
+  },
+  sendButton: {
+    marginLeft: 10,
+    backgroundColor: '#4CAF50',
+    borderRadius: 20,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+  },
+  sendButtonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  chatContainer: {
+    padding: 16,
+  },
+  userMessage: {
+    backgroundColor: '#4CAF50', // User message background color
+    padding: 8,
+    borderRadius: 8,
+    alignSelf: 'flex-end', // Align user messages to the right
+    marginBottom: 8,
+    maxWidth: '70%', // Adjust the max width if needed
+  },
+  aiMessage: {
+    backgroundColor: '#2196F3', // AI message background color
+    padding: 8,
+    borderRadius: 8,
+    alignSelf: 'flex-start', // Align AI messages to the left
+    marginBottom: 8,
+    maxWidth: '70%', // Adjust the max width if needed
+  },
+  messageText: {
+    color: '#fff', // Text color for messages
+    fontSize: 16,
+  },
+});

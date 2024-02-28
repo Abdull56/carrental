@@ -4,6 +4,7 @@ import "react-native-gesture-handler";
 import DisplayPage from "../../Screens/DisplayPage";
 import DescriptionPage from "../../Screens/DescriptionPage";
 import AvailableCar from "../../Screens/AvailableCar";
+import CustomerSupport from "../../Screens/Support";
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,12 @@ function StackBar() {
         component={AvailableCar}
         options={{ headerShown: false,
         contentStyle: { backgroundColor: "#2B292D" } }}
+      />
+      <Stack.Screen
+        name="Support"
+        component={CustomerSupport}
+        options={{ headerShown: false,
+        contentStyle: { backgroundColor: "lightgrey" } }}
       />
     </Stack.Navigator>
   );

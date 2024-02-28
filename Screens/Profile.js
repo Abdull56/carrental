@@ -75,7 +75,7 @@ const Profile = ({navigation}) => {
                     </View>
                 </TouchableOpacity>
                 <View style={globalStyles.hrLine} />
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate("Support")}>
                     <View style={globalStyles.cardIntro}>
                         <Text style={globalStyles.text}>App Support</Text>
                         <MaterialIcons name="contact-support" size={34} color="black"  
