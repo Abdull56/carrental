@@ -393,6 +393,7 @@ export const supportStyles = StyleSheet.create({
     padding: 16,
     borderTopWidth: 1, 
     borderTopColor: 'black',
+    backgroundColor:'lightgrey'
   },
   inputField: {
     flex: 1,
@@ -418,23 +419,26 @@ export const supportStyles = StyleSheet.create({
     padding: 16,
   },
   userMessage: {
-    backgroundColor: '#4CAF50', // User message background color
+    backgroundColor: '#4CAF50', 
     padding: 8,
     borderRadius: 8,
-    alignSelf: 'flex-end', // Align user messages to the right
+    alignSelf: 'flex-end', 
     marginBottom: 8,
-    maxWidth: '70%', // Adjust the max width if needed
+    maxWidth: '70%',
   },
   aiMessage: {
-    backgroundColor: '#2196F3', // AI message background color
+    backgroundColor: '#2196F3', 
     padding: 8,
     borderRadius: 8,
-    alignSelf: 'flex-start', // Align AI messages to the left
+    alignSelf: 'flex-start',
     marginBottom: 8,
-    maxWidth: '70%', // Adjust the max width if needed
+    maxWidth: '70%', 
   },
   messageText: {
-    color: '#fff', // Text color for messages
+    color: '#fff', 
     fontSize: 16,
   },
+  textcont:{
+    
+  }
 });

@@ -65,13 +65,15 @@ const CustomerSupport = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={supportStyles.inputContainer}
       >
-        <TextInput
-          style={supportStyles.inputField}
-          placeholder="Type your problem..."
-          value={inputText}
-          onChangeText={(text) => setInputText(text)}
-          multiline
-        />
+        <View style={supportStyles.textcont}>
+          <TextInput
+            style={supportStyles.inputField}
+            placeholder="Type your problem..."
+            value={inputText}
+            onChangeText={(text) => setInputText(text)}
+            multiline
+          />
+        </View>
         <TouchableOpacity style={supportStyles.sendButton} onPress={handleSend}>
           <Text style={supportStyles.sendButtonText}>Send</Text>
         </TouchableOpacity>

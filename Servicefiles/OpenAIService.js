@@ -58,4 +58,3 @@ export const generateAIDialog = async (userInput) => {
         throw error;
     }
 };
-
