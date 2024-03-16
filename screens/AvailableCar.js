@@ -14,6 +14,7 @@ import { globalStyles } from "../components/styles/globalStyles";
 import { useRoute } from "@react-navigation/native";
 
 
+
 function AvailableCar({ navigation }) {
   const route = useRoute();
   const { isLiked = false } = route.params || {};

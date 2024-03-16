@@ -1,8 +1,16 @@
 import { OPENAI_API_KEY_ENDPOINT, OPENAI_API_URL } from "./environment";
 
+const isValidJson = (text) => {
+    try {
+        JSON.parse(text);
+        return true;
+    } catch (error) {
+        return false;
+    }
+};
+
 export const generateAIDialog = async (userInput) => {
     try {
-
         const openaiApiKeyResponse = await fetch(OPENAI_API_KEY_ENDPOINT);
         const openaiApiKeyResult = await openaiApiKeyResponse.json();
         const openaiApiKey = openaiApiKeyResult.openaiApiKey;
@@ -34,7 +42,7 @@ export const generateAIDialog = async (userInput) => {
         let aiResponse = '';
 
         chunks.forEach(chunk => {
-            if (chunk.trim() !== '') {
+            if (chunk.trim() !== '' && isValidJson(chunk.trim())) {
                 try {
                     const parsedChunk = JSON.parse(chunk.trim());
 
@@ -52,7 +60,7 @@ export const generateAIDialog = async (userInput) => {
             }
         });
 
-        return aiResponse.trim();  
+        return aiResponse.trim();
     } catch (error) {
         console.error('Error generating AI response:', error);
         throw error;
